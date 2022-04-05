@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to left, #f8ced8);
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav ul li {
+    list-style: none;
+    margin: 1rem;
+    background-color: whitesmoke;
+    padding: 0.3rem;
+    border-radius: 1rem;
+}
+
+/* transformaciones menu */
+nav ul li:hover {
+    background-color: #f2b1c0;
+    transform: scale(1, 1.2);
+    /* transform: rotate(5deg);
+    transform: translate(10px,20px); */
+    box-shadow: 2px 2px royalblue;
+}
+
+/* img {
+    transition: 1s;
+}
+
+img:hover {
+    transform: scale(1.5);
+} */
+
+/* ---------------------------------------------- */
+
+/* animaciones */
+
+.imgLuna {
+    width: 60%;
+    animation-name: girar;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ------------------------------------------------ */
+.sectionNosotros {
+    display: none;
+}
+
+.mainNosotros {
+    height: 80vh;
+    display: grid;
+    grid-template-areas: 
+        "mainP mainP"
+        "imagen1 imagen2"
+        "imagen3 imagen4"
+        "parrafo parrafo";
+    justify-content: center;
+}
+
+.mainP {
+    grid-area: mainP;
+    text-align: center;
+}
+
+.imagen1 {
+    grid-area: imagen1;
+}
+
+.imagen2 {
+    grid-area: imagen2;
+}
+
+.imagen3 {
+    grid-area: imagen3;
+}
+
+.imagen4 {
+    grid-area: imagen4;
+}
+
+.parrafo {
+    grid-area: parrafo;
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* media quieries para pantalla superior a 600px */
+
+@media only screen and (min-width: 600px){
+    .mainNosotros {
+        height: 80vh;
+        display: grid;
+        grid-template-areas: 
+            "mainP mainP mainP mainP"
+            "img img img img"
+            "imagen1 imagen2 imagen3 imagen4"
+            "parrafo parrafo parrafo parrafo" ;
+        justify-content: center;
+    }
+
+    .mainP, .parrafo {
+        font-size: 1.3rem;
+    }
+
+    .sectionNosotros {
+        display: block;
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagen1, .imagen2, .imagen3, .imagen4 {
+        padding: 1rem;
+    }
+
+    main div img {
+        width: 60%;
+    }
+}
+
+
+/* media queries para pantallas mayores a 1024px */
+@media only screen and (min-width: 1024px) {
+    .mainNosotros {
+        height: 80vh;
+        display: grid;
+        grid-template-areas: 
+            "mainP mainP img img"
+            "imagen1 imagen2 imagen3 imagen4"
+            "parrafo parrafo parrafo parrafo" ;
+        justify-content: center;
+        align-items: center;
+    }      
+}
